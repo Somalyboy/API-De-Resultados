@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Net;
 using CapaLogica;
 using Newtonsoft.Json;
+using System.Data;
+
 
 namespace API_De_Resultados
 {
@@ -27,6 +29,8 @@ namespace API_De_Resultados
                 HttpListenerResponse respuesta = contexto.Response;
 
                 Respuesta r = new Respuesta(solicitud, respuesta);
+
+                //buscar info
 
                 System.IO.Stream output = r.respuesta.OutputStream;
                 output.Write(r.memoria, 0, r.memoria.Length);
